@@ -14,7 +14,7 @@ public:
 	Disease();
 public:
 	std::string mDiseaseName;
-	DiseaseType mDisease;
+	DiseaseType mDiseaseType;
 
 private: //No need for anybody to use this 
 	std::random_device rd;

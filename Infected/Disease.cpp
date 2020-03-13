@@ -3,10 +3,10 @@
 Disease::Disease()
 	:rd(), mt(rd()), distribution(0, 7)
 {
-	mDisease = static_cast<DiseaseType>(distribution(mt));
+	mDiseaseType = static_cast<DiseaseType>(distribution(mt));
 
 	//Names the disease ddepents on the type.
-	switch (mDisease)
+	switch (mDiseaseType)
 	{
 	case DiseaseType::Coronavirus:
 		mDiseaseName = "Coronavirus";
