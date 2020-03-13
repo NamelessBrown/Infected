@@ -8,6 +8,8 @@ int main()
 {
 	Game game;
 
+	int x = 0;
+
 	game.Run();
 }
 
