@@ -7,10 +7,26 @@ class Human
 {
 public:
 	Human();
+
+	void GotInfected();
+
+private:
+
+	enum class Status
+	{
+		Homeless = 0, Poor, LowClass, MiddleClass, HighClass, TrumpClass
+	};
+
 private:
 	int mAge;
-	std::string mName;
+	int mHealth;
+	int mMoney;
 	bool mIsInfected;
+	bool mIsDead;
+
+	std::string mName;
+
+	Status mStatus;
 	Disease mDisease;
 
 	std::vector<std::string> m_names{
@@ -24,6 +40,7 @@ private:
 	std::mt19937 mMt;
 	std::uniform_int_distribution<int> mAgeDistribution;
 	std::uniform_int_distribution<int> mNameDistribution;
+	std::uniform_int_distribution<int> mStatusDistribution;
 
 };
 
