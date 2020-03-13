@@ -11,13 +11,12 @@ enum class DiseaseType
 struct Disease
 {
 public:
-	Disease() = default;
-	Disease(const std::string diseaseName);
+	Disease();
 public:
 	std::string mDiseaseName;
 	DiseaseType mDisease;
 
-private:
+private: //No need for anybody to use this 
 	std::random_device rd;
 	std::mt19937 mt;
 	std::uniform_int_distribution<int> distribution;
