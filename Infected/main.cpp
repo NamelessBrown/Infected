@@ -7,16 +7,6 @@
 int main()
 {
 	Game game;
-
-	constexpr int size = 10;
-
-	std::vector<Human> people(50);
-
-	for (int i = 0; i < people.size(); ++i)
-	{
-		people[i].GotInfected();
-	}
-
 	game.Run();
 }
 
