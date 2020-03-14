@@ -1,5 +1,7 @@
 # Infected
-An Infected game for infected people. WORK IN PROGRESS
+An Infected game for infected people. Done! I like it. I was about to give up on this project, but I told myself don't.
+I was going to give up, but I kept pushing through it. I love how this game came out!
+One of my best piece of work!
 
 You may need to install SFML and do all the linking itself.
 I will looking into more ways to use this.
