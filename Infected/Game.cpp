@@ -13,11 +13,11 @@ Game::Game()
 
 	mFont.loadFromFile("Font/Nervous.ttf");
 	mInfectedText.setFont(mFont);
-	mInfectedText.setCharacterSize(12);
+	mInfectedText.setCharacterSize(15);
 	mInfectedText.setPosition(0.0f, 150.f);
 
 	mDeathText.setFont(mFont);
-	mDeathText.setCharacterSize(12);
+	mDeathText.setCharacterSize(15);
 	mDeathText.setPosition(50.f, 5.0f);
 }
 
