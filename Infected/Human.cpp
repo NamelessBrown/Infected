@@ -41,11 +41,34 @@ Human::Human(std::mt19937 mt)
 	}
 
 }
-
-void Human::GotInfected()
+/* Got infected to bad... If you have enough money you can go to a doctor and they will help you keep living! */
+void Human::GotInfected(int timesByDiseaseType)
 {
-	if (mStatus != Status::TrumpClass)
+	mHealth -= mHealth * timesByDiseaseType;
+
+	if (mHealth < 0 && mMoney > timesByDiseaseType * 25)
 	{
-		std::cout << mName << " has been infected by the " << mDisease.mDiseaseName << "! \n";
+		mHealth += timesByDiseaseType + 100;
+	}
+
+	UpdateDate();
+}
+
+/* No need to worry. I know that some month don't have 30, but most do and I don't feel like adding all of that! */
+void Human::UpdateDate()
+{
+	mDate.mDay++;
+
+	if (mDate.mDay > 30)
+	{
+		mDate.mDay = 1;
+		mDate.mMonth++;
+	}
+
+	if (mDate.mMonth > 12)
+	{
+		mDate.mDay = 1;
+		mDate.mMonth = 1;
+		mDate.mYear++;
 	}
 }
