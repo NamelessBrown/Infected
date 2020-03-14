@@ -55,6 +55,21 @@ bool Button::IsClicked(const sf::Sprite& sprite)
 	return mClicked;
 }
 
+bool Button::IsClicked(const sf::Vector2i& mousePosition)
+{
+	const sf::Mouse mouse;
+
+	if (mButtonRect.getGlobalBounds().contains(static_cast<sf::Vector2f>(mousePosition)) && mouse.isButtonPressed(sf::Mouse::Left) && !mClicked)
+	{
+		mClicked = true;
+	}
+	else
+		mClicked = false;
+
+
+	return mClicked;
+}
+
 void Button::MovePosition(const sf::Vector2f& newPosition)
 {
 	mButtonRect.setPosition(newPosition);

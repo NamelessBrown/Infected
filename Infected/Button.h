@@ -17,6 +17,7 @@ public:
 	virtual ~Button();
 
 	bool IsClicked(const sf::Sprite& sprite);
+	bool IsClicked(const sf::Vector2i& mousePosition);
 	void MovePosition(const sf::Vector2f& newPosition);
 	void ChangeedFont(const std::string fontFileName);
 
