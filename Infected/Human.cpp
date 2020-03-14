@@ -1,6 +1,8 @@
 #include "Human.h"
 #include <iostream>
 
+Date Human::mDate = Date();
+
 Human::Human(std::mt19937 mt)
 	:mIsInfected(false), mAgeDistribution(0, 100), mNameDistribution(0, m_names.size() - 1), mIsDead(false), mHealth(0),
 	mStatusDistribution(0, 6), mMoney(0), mDisease(mt)

@@ -27,8 +27,9 @@ public:
 	//getters
 	const std::string& getName() const { return mName; }
 	const int& getAge() const { return mAge; }
+	const int& getHealth() const { return mHealth; }
 	const Disease& getDisease() const { return mDisease; }
-	const Date& getDate() { return mDate; }
+	const static Date& getDate() { return mDate; }
 
 private:
 
@@ -48,7 +49,7 @@ private:
 
 	Status mStatus;
 	Disease mDisease;
-	Date mDate;
+	static Date mDate;
 
 	std::vector<std::string> m_names{
 		"Joe", "Bob", "Frank", "Billy", "Adien", "NamelessBrown", "Mia", "Madison", "Chole", "Orion", "Marlon", "Chris", "Reggie",
