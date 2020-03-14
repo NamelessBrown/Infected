@@ -18,23 +18,23 @@ Human::Human(std::mt19937 mt)
 	{
 	case Status::Homeless:
 		mMoney = 0;
-		mHealth = 10;
+		mHealth = 25;
 		break;
 	case Status::Poor:
 		mMoney = 15;
-		mHealth = 25;
+		mHealth = 50;
 		break;
 	case Status::LowClass:
 		mMoney = 50;
-		mHealth = 50;
+		mHealth = 75;
 		break;
 	case Status::MiddleClass:
 		mMoney = 100;
-		mHealth = 75;
+		mHealth = 100;
 		break;
 	case Status::HighClass:
 		mMoney = 1000;
-		mHealth = 100;
+		mHealth = 150;
 		break;
 	case Status::TrumpClass:
 		mMoney = 100000000;
@@ -46,13 +46,18 @@ Human::Human(std::mt19937 mt)
 /* Got infected to bad... If you have enough money you can go to a doctor and they will help you keep living! */
 void Human::GotInfected(int timesByDiseaseType)
 {
-	mHealth -= mHealth * timesByDiseaseType;
 
-	if (mHealth < 0 && mMoney > timesByDiseaseType * 25)
+	if (mStatus == Status::TrumpClass)
 	{
-		mHealth += timesByDiseaseType + 100;
+		mHealth -= (timesByDiseaseType + 50);
+		mMoney -= timesByDiseaseType * 4;
+	}
+	else if (mStatus != Status::TrumpClass)
+	{
+		mHealth -= (timesByDiseaseType + 5);
 	}
 
+	//mHealth -= 10;
 	UpdateDate();
 }
 
