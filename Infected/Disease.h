@@ -8,17 +8,14 @@ enum class DiseaseType
 	Coronavirus = 0, Flu, BubonicPlague, HIV, Ebola, Smallpox, Influenza, Rabies
 };
 
-struct Disease
+class Disease
 {
 public:
-	Disease();
+	Disease(std::mt19937 mt);
 public:
 	std::string mDiseaseName;
 	DiseaseType mDiseaseType;
 
 private: //No need for anybody to use this 
-	std::random_device rd;
-	std::mt19937 mt;
 	std::uniform_int_distribution<int> distribution;
-
 };

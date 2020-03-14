@@ -1,7 +1,7 @@
 #include "Disease.h"
 
-Disease::Disease()
-	:rd(), mt(rd()), distribution(0, 7)
+Disease::Disease(std::mt19937 mt)
+	:distribution(0, 7)
 {
 	mDiseaseType = static_cast<DiseaseType>(distribution(mt));
 
