@@ -6,7 +6,7 @@
 class Human
 {
 public:
-	Human();
+	Human(std::mt19937 mt);
 
 	void GotInfected();
 
@@ -36,8 +36,7 @@ private:
 		"The_Lone_Wanderer", "Lily_Madwhip", "Kevin_Macleod", "ChiliTomatoNoodle", "The_toe_bro", "Varyana", "Hugo_One", "Don", "Mr.Smith"
 	};
 
-	std::random_device mRd;
-	std::mt19937 mMt;
+
 	std::uniform_int_distribution<int> mAgeDistribution;
 	std::uniform_int_distribution<int> mNameDistribution;
 	std::uniform_int_distribution<int> mStatusDistribution;
