@@ -2,6 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "Human.h"
+#include "Button.h"
 
 class Game
 {
@@ -12,9 +13,21 @@ public:
 
 	void Run();
 private:
+	//random numbers gen
+	std::random_device mRd;
+	std::mt19937 Mmt;
+
+	//SFML 
 	sf::RenderWindow* m_window;
 	sf::Event* m_event;
+	sf::Vector2i mMousePosition;
 
+	//Game related stuff
+	Button mInfectedButton;
+	std::vector<Human> mPeoples;
+
+
+	//private functions
 	void PollEvent();
 	void Update();
 	void Render();
