@@ -3,16 +3,22 @@
 
 Game::Game()
 	:mRd(), Mmt(mRd()),
-	mInfectedButton(sf::Vector2f(50.f, 150.f), "Infected", sf::Color::Red, sf::Vector2f(25.f,25.f), "Font/Nervous.ttf", 25)
+	mInfectedButton(sf::Vector2f((float)sf::VideoMode::getDesktopMode().width / 2, (float)sf::VideoMode::getDesktopMode().height / 2), "Infected", sf::Color::Red, sf::Vector2f(25.f,25.f), "Font/Nervous.ttf", 25)
 {
 	m_window = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "Infected", sf::Style::Close | sf::Style::Titlebar);
 	m_event = new sf::Event();
 
+	std::cout << sf::VideoMode::getDesktopMode().width << '\n';
+	std::cout << sf::VideoMode::getDesktopMode().height << '\n';
+
 	mFont.loadFromFile("Font/Nervous.ttf");
 	mInfectedText.setFont(mFont);
 	mInfectedText.setCharacterSize(12);
-	mInfectedText.setPosition(0.f, 250.f);
+	mInfectedText.setPosition(0.0f, 150.f);
 
+	mDeathText.setFont(mFont);
+	mDeathText.setCharacterSize(12);
+	mDeathText.setPosition(50.f, 5.0f);
 }
 
 Game::~Game()
@@ -28,6 +34,31 @@ void Game::Run()
 		Update();
 		Render();
 	}
+}
+
+void Game::DiedByDisease()
+{
+	std::vector<Human>::iterator iter;
+	std::stringstream deathStream;
+
+	for (iter = mPeoples.begin(); iter != mPeoples.end();)
+	{
+		if (iter->getHealth() < 0)
+		{
+			deathStream << iter->getName() << " has died from " << iter->getDisease().mDiseaseName << '.' << ' ' << iter->getName() <<
+				" has died on " << iter->getDate().mYear << '/' << iter->getDate().mMonth << '/' << iter->getDate().mDay << '.' << ' ' <<
+				iter->getName() << " died at the age of " << iter->getAge();
+
+			mDeathText.setString(deathStream.str());
+
+			iter = mPeoples.erase(iter);
+		}
+		else
+		{
+			iter++;
+		}
+	}
+
 }
 
 void Game::PollEvent()
@@ -68,7 +99,7 @@ void Game::Update()
 		mInfectedText.setString(ss.str());
 	}
 
-
+	DiedByDisease();
 }
 
 void Game::Render()
@@ -79,6 +110,7 @@ void Game::Render()
 	mInfectedButton.Draw(*m_window);
 
 	m_window->draw(mInfectedText);
+	m_window->draw(mDeathText);
 
 	m_window->display();
 }

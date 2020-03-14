@@ -30,11 +30,13 @@ private:
 	Button mInfectedButton;
 	std::vector<Human> mPeoples;
 	
+	//game functions
+	void DiedByDisease();
 
 	//private functions
 	void PollEvent();
 	void Update();
 	void Render();
-
+	
 };
 
