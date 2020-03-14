@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <sstream>
 #include "Human.h"
 #include "Button.h"
 
@@ -21,11 +22,14 @@ private:
 	sf::RenderWindow* m_window;
 	sf::Event* m_event;
 	sf::Vector2i mMousePosition;
+	sf::Font mFont;
+	sf::Text mInfectedText;
+	sf::Text mDeathText;
 
 	//Game related stuff
 	Button mInfectedButton;
 	std::vector<Human> mPeoples;
-
+	
 
 	//private functions
 	void PollEvent();
