@@ -43,11 +43,11 @@ void Game::DiedByDisease()
 
 	for (iter = mPeoples.begin(); iter != mPeoples.end();)
 	{
-		if (iter->getHealth() < 0)
+		if (iter->getHealth() <= 0)
 		{
 			deathStream << iter->getName() << " has died from " << iter->getDisease().mDiseaseName << '.' << ' ' << iter->getName() <<
 				" has died on " << iter->getDate().mYear << '/' << iter->getDate().mMonth << '/' << iter->getDate().mDay << '.' << ' ' <<
-				iter->getName() << " died at the age of " << iter->getAge();
+				iter->getName() << " died at the age of " << iter->getAge() << '\n';
 
 			mDeathText.setString(deathStream.str());
 
@@ -95,7 +95,7 @@ void Game::Update()
 
 	for (auto& e : mPeoples)
 	{
-		ss << e.getName() << " has gotten the " << e.getDisease().mDiseaseName << "!\n";
+		ss << e.getName() << " has gotten the " << e.getDisease().mDiseaseName << "! " << e.getName() << " health is " << e.getHealth() << '\n';
 		mInfectedText.setString(ss.str());
 	}
 
