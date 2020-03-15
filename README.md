@@ -12,5 +12,17 @@ Infect everybody and get them sick.
 Not with just one virus, but most of them!
 Infect these people and win!
 
+MUSIC NOT OWN BY ME!
+<----------------MUSIC MADE BY: ---------------------------->
+1.) Shadow of the Colossus OST 25 - A Despair - filled Farewell
+2.) Corpse Party Blood Covered OST - Chapter 1's Main Theme (Extended)
+3.) Ice Flow - Kevin MacLeod
+4.) Johnny Ghosst - Stop it ft.PG
+5.) Johnny Ghosst - Sum Love Feat.PG aka Infected Monsta
+6.) Loving You remix feat.Infected Monsta
+7.) Promise Reprise (PianoVersion) - Silent Hill 2
+8.) Rhinoceros - Kevin MacLeod
+9.) Sad Piano Music - Isolation by Lucas King
+10.) Volatile Reaction - Kevin MacLeod
 
 Also You didn't have to READ ME :>
