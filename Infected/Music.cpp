@@ -1,7 +1,7 @@
 #include "Music.h"
 
 Music::Music()
-	:mRd(), mMt(mRd()), distribution(mSongs.size()), mWhatFile(distribution(mMt))
+	:mRd(), mMt(mRd()), distribution(0, 9), mWhatFile(distribution(mMt))
 {
 	mSongs[0] = "Music/[HighQuality]ShadowoftheColossusOST25-ADespair-filledFarewell.ogg";
 	mSongs[1] = "Music/CorpsePartyBloodCoveredOST-Chapter 1'sMainTheme(Extended).ogg";
