@@ -25,11 +25,15 @@ private:
 	sf::Font mFont;
 	sf::Text mInfectedText;
 	sf::Text mDeathText;
+	sf::Text mKillCount;
 
 	//Game related stuff
 	Button mInfectedButton;
+	Button mArmageddon;
 	std::vector<Human> mPeoples;
-	
+	int mDeaths;
+	bool mBeganArmageddon;
+
 	//game functions
 	void DiedByDisease();
 
