@@ -3,7 +3,8 @@
 Game::Game()
 	:mRd(), Mmt(mRd()), mDeaths(0), mBeganArmageddon(false),
 	mInfectedButton(sf::Vector2f((float)sf::VideoMode::getDesktopMode().width / 2, (float)sf::VideoMode::getDesktopMode().height / 2), "Infected", sf::Color::Red, sf::Vector2f(25.f,25.f), "Font/Nervous.ttf", 25),
-	mArmageddon(sf::Vector2f((float)sf::VideoMode::getDesktopMode().width / 2, 500), " Unleash_Armageddon!", sf::Color::Green, sf::Vector2f(25.f, 25.f), "Font/Nervous.ttf", 25)
+	mArmageddon(sf::Vector2f((float)sf::VideoMode::getDesktopMode().width / 2, 500), "Unleash_Armageddon!", sf::Color::Green, sf::Vector2f(25.f, 25.f), "Font/Nervous.ttf", 25),
+	mMusicButton(sf::Vector2f((float)sf::VideoMode::getDesktopMode().width / 2, 700), "Music!", sf::Color::Blue, sf::Vector2f(25.f, 25.f), "Font/Nervous.ttf", 25)
 {
 	m_window = new sf::RenderWindow(sf::VideoMode::getDesktopMode(), "Infected", sf::Style::Close | sf::Style::Titlebar);
 	m_event = new sf::Event();
@@ -106,6 +107,12 @@ void Game::PollEvent()
 					mPeoples.push_back(Human(Mmt));
 				}
 			}
+
+			if (mMusicButton.IsClicked(mMousePosition))
+			{
+				mMusic.Play();
+			}
+
 			break;
 		}
 	}
@@ -141,6 +148,8 @@ void Game::Render()
 	{
 		mArmageddon.Draw(*m_window);
 	}
+
+	mMusicButton.Draw(*m_window);
 
 	m_window->draw(mInfectedText);
 	m_window->draw(mDeathText);

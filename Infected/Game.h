@@ -4,6 +4,7 @@
 #include <sstream>
 #include "Human.h"
 #include "Button.h"
+#include "Music.h"
 
 class Game
 {
@@ -30,9 +31,12 @@ private:
 	//Game related stuff
 	Button mInfectedButton;
 	Button mArmageddon;
+	Button mMusicButton;
 	std::vector<Human> mPeoples;
+	Music mMusic;
 	int mDeaths;
 	bool mBeganArmageddon;
+
 
 	//game functions
 	void DiedByDisease();
